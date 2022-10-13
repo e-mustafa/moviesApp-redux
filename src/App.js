@@ -18,9 +18,8 @@ import Page404 from './Components/Page404';
 
 
 
-
 function App() {
-
+   const navigate = useNavigate()
    const dispatch = useDispatch()
 
    const moviesLength = useSelector(state => state.moviesLength)
@@ -33,10 +32,7 @@ function App() {
 
 
 
-
-
-
-   const navigate = useNavigate()
+   // change url / to /1 in frist load
    useEffect( () =>{
       window.location.pathname === '/' && navigate(`/${1 || 1}`)
    },[])
@@ -50,11 +46,6 @@ function App() {
    //    let favoriteFromLocalStorage = localStorage.getItem('favorite-Movies') || '[]' ;
    //    dispatch(addToFavorite(JSON.parse(favoriteFromLocalStorage)));
    // },[])
-
-
-
-
-
 
 
 
